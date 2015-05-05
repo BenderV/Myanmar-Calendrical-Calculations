@@ -1,5 +1,5 @@
 {
-  "name": "Myanmar-Calendrical-Calculations",
+  "name": "mccjs",
   "version": "0.0.1",
   "description": "Myanmar Calendrical Calculations by Yan Naing Aye",
   "main": "mccjs.js",
