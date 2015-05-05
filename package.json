@@ -1,0 +1,28 @@
+{
+  "name": "Myanmar-Calendrical-Calculations",
+  "version": "0.0.1",
+  "description": "Myanmar Calendrical Calculations by Yan Naing Aye",
+  "main": "mccjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BenderV/Myanmar-Calendrical-Calculations.git"
+  },
+  "keywords": [
+    "myanmar",
+    "calendar",
+    "gregorial"
+  ],
+  "author": "Yan Naing Aye",
+  "contributors": [{
+    "name": "Benjamin Derville",
+    "email": "benjamin.derville@gmail.com"
+  }],
+  "license": "Creative Commons Attribution 3.0 Unported License",
+  "bugs": {
+    "url": "https://github.com/BenderV/Myanmar-Calendrical-Calculations/issues"
+  },
+  "homepage": "https://github.com/BenderV/Myanmar-Calendrical-Calculations"
+}
