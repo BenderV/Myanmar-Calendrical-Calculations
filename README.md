@@ -5,6 +5,7 @@ Myanmar Calendrical Calculations by Yan Naing Aye
 I'm not the author. 
 
 I'm just posting this on github because I haven't find any good Myanmar calendar converter.
+I have also transformed it to a (UMD) library. Restricting the api for now to just the conversion (Myanmar Calendar to Gregorian and inverse).
 
 See [this blog post](http://cool-emerald.blogspot.com/2013/06/algorithm-program-and-calculation-of.html) for good an introduction to the algorithm.
 
