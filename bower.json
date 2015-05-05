@@ -1,0 +1,27 @@
+{
+  "name": "mccjs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/BenderV/Myanmar-Calendrical-Calculations",
+  "authors": [
+    "Yan Naing Aye"
+  ],
+  "description": "Myanmar Calendrical Calculations by Yan Naing Aye",
+  "main": "mccjs.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "myanmar",
+    "calendar",
+    "gregorian",
+    "converter"
+  ],
+  "license": "Creative Commons Attribution 3.0 Unported License",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
