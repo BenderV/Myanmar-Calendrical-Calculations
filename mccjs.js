@@ -616,8 +616,8 @@
     //  ms :moon status, 0: waxing, 1: full moon, 2: waning, 3: new moon,
     //  wd: week day, 0=sat, 1=sun, ..., 6=fri)
     function g2m(gy,gm,gd) {
-      return j2m(g2j(yn,mn,dn));//Gregorian date to julian date
-    },
+      return j2m(g2j(gy,gm,gd));//Gregorian date to julian date
+    }
     // Public function - Myanmar to Gregorian
     //----------------------------------------------------------------------------
     //input:  (my : year,
@@ -633,28 +633,56 @@
     //  ms :moon status, 0: waxing, 1: full moon, 2: waning, 3: new moon,
     //  wd: week day, 0=sat, 1=sun, ..., 6=fri)
     //ouput: (gy=year, gm=month [Jan=1, ... , Dec=12], gd: day [0-31])
-    function m2g(gy,gm,gd) {
-      return j2m(g2j(yn,mn,dn));//Gregorian date to julian date
-    },
-    //    exposed public methods
+    function m2g(my,mm,mmt,ms,d) {
+      return j2g(m2j(my,mm,mmt,ms,d));//Gregorian date to julian date
+    }
 
-    //Myanmar date to Julian date
-    //input:  (my : year,
-    //mm: month,
-    //mmt: month type, 1=hnaung, 0= Oo,
-    //ms :moon status, 0: waxing, 1: full moon, 2: waning, 3: new moon,
-    //d: day =1 to 15,)
-    //output: (jd -julian date)
-    function m2j(my,mm,mmt,ms,d) {
-      return j2g(m2j(my,mm,mmt,ms,d));//Myanmar date to julian date
-    },
 
-    /* TODO : ADD THE DISPLAY FUNCTION */
+    //input: 
+    //  mDate: myanmarDate
+    //  lang: (0: myanmar unicode, 1: english, 2: Mon Language using Unicode, 3:Zawgyi-One)
+    //output:
+    //  string
+    function dateString(mDate, lang) {
+      SetLang(lang || 0); // Default is myanmar.
+
+      var display = mDate.my +", "; // +" ME, ";
+      
+      if(mDate.mmt === 1) { 
+        display += "Hnaung ";
+      }
+
+      var months=["1st Waso","Tagu","Kason","Nayon","Waso","Wagaung","Tawthalin", "Thadingyut","Tazaungmon","Nadaw","Pyatho","Tabodwe","Tabaung"];
+      for (var i = 0; i < months.length; i++) {
+        months[i] = X[months[i]];
+      };
+
+      if(mDate.myt !== 0 && mDate.mm === 4) {
+        display += "2nd "; 
+      }
+      
+      display += months[mDate.mm] + " ";
+
+      var msStr=["waxing","full moon","waning","new moon"];
+      for (var i = 0; i < msStr.length; i++) {
+        msStr[i] = X[msStr[i]];
+      };
+
+      display += msStr[mDate.ms] + " "; 
+
+      if ((mDate.ms%2) === 0) {
+        display += mDate.d; 
+      }
+
+      return display;
+    }
+
 
     // Add function here to make them publicly available
     return {
         g2m: g2m,
-        m2g: m2g
+        m2g: m2g,
+        dateString: dateString
     }
 }));
 
