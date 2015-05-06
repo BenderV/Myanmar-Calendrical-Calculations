@@ -646,7 +646,7 @@
     function dateString(mDate, lang) {
       SetLang(lang || 0); // Default is myanmar.
 
-      var display = mDate.my +", "; // +" ME, ";
+      var display = n2s(mDate.my) +", "; // +" ME, ";
       
       if(mDate.mmt === 1) { 
         display += "Hnaung ";
@@ -671,7 +671,7 @@
       display += msStr[mDate.ms] + " "; 
 
       if ((mDate.ms%2) === 0) {
-        display += mDate.d; 
+        display += n2s(mDate.d); 
       }
 
       return display;
