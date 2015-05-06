@@ -27,7 +27,7 @@
         module.exports = factory();
     } else {
         // Browser globals (root is window)
-        root.returnExports = factory();
+        root.mccjs = factory();
     }
 }(this, function ($, _) {
     //    methods
