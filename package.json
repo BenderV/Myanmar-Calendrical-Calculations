@@ -4,7 +4,7 @@
   "description": "Myanmar Calendrical Calculations by Yan Naing Aye",
   "main": "mccjs.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

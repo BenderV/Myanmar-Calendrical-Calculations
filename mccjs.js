@@ -197,7 +197,7 @@
     	do{ yd++; y1=chk_watat(my-yd); }while(y1.watat==0);
     	watat=y2.watat;  myt=watat;  
     	if(watat) { nd=(y2.fm-y1.fm)%354; bw=Math.floor(nd/31); myt=bw+1;}
-    	tg1=y1.fm+354*yd-102;	
+    	tg1=y1.fm+354*yd-102;
     	return {myt:myt,watat:watat,bw:bw,tg1:tg1};
     }
     //-----------------------------------------------------------------------------
@@ -225,7 +225,8 @@
     //d: day =1 to 15,)
     //output: (jd -julian date)
     function m2j(my,mm,mmt,ms,d) {
-    	yo=chk_my(my);//check year
+      var yo, mml, m1, m2, md, t, s, c, dd, myl;
+      yo=chk_my(my);//check year
     	mml=30-mm%2;//month length
     	if (mm==3) mml+=yo.bw;//adjust if Nayon in big watat
     	m1=ms%2; m2=Math.floor(ms/2); md=m1*(15+m2*(mml-15))+(1-m1)*(d+15*m2);
