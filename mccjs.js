@@ -681,7 +681,7 @@
       
       var day = n2s(mDate.d);
 
-      display = year + '-' + month + '-' + day; 
+      display = day + '-' + month + '-' + year; 
       return display;
     }
 
