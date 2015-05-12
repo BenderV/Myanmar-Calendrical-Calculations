@@ -647,34 +647,41 @@
     function dateString(mDate, lang) {
       SetLang(lang || 0); // Default is myanmar.
 
-      var display = n2s(mDate.my) +", "; // +" ME, ";
+      var display; 
       
-      if(mDate.mmt === 1) { 
+      var year = n2s(mDate.my); // +" ME, ";
+      
+      /* if(mDate.mmt === 1) { 
         display += "Hnaung ";
-      }
+      } */
 
       var months=["1st Waso","Tagu","Kason","Nayon","Waso","Wagaung","Tawthalin", "Thadingyut","Tazaungmon","Nadaw","Pyatho","Tabodwe","Tabaung"];
       for (var i = 0; i < months.length; i++) {
         months[i] = X[months[i]];
       };
 
-      if(mDate.myt !== 0 && mDate.mm === 4) {
+      /* if(mDate.myt !== 0 && mDate.mm === 4) {
         display += "2nd "; 
-      }
-      
-      display += months[mDate.mm] + " ";
+      } */
+      var month = months[mDate.mm]
+      //display += months[mDate.mm] + " ";
 
-      var msStr=["waxing","full moon","waning","new moon"];
+      /* var msStr=["waxing","full moon","waning","new moon"];
       for (var i = 0; i < msStr.length; i++) {
         msStr[i] = X[msStr[i]];
-      };
+      }; */
 
-      display += msStr[mDate.ms] + " "; 
+      // display += msStr[mDate.ms] + " "; 
 
-      if ((mDate.ms%2) === 0) {
+      /* 
+      if ((mDate.ms % 2) === 0) {
         display += n2s(mDate.d); 
       }
+      */
+      
+      var day = n2s(mDate.d);
 
+      display = year + '-' + month + '-' + day; 
       return display;
     }
 
